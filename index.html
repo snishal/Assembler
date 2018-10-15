@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assembler</title>
+	<style type="text/css">
+		*{
+			box-sizing: border-box;
+		}
+		#source{
+			margin-top: 3%;
+			margin-left: 10%;
+			float: left;
+			padding: 40px;
+			border-radius: 5px;
+		}
+		#submit{
+			margin-top: 15%;
+			margin-left: 25%;
+			cursor: pointer;
+			padding: 10px 30px;
+			border: none;
+			background-color: #33adff;
+			color: white;
+		}
+		#submit:hover{
+			box-shadow: 5px 10px #888888;
+		}
+	</style>
+</head>
+<body>
+	<center><h1>Visualize Assembler</h1></center>
+	<div id="main">
+		<textarea id="source" rows="25" cols="40" placeholder="Type your code"></textarea>
+		<button id="submit" onclick="assemble()">Submit</button>
+	</div>
+</body>
+<script type="text/javascript">
+	function assemble(){
+		var source = document.getElementById('source').value;
+		source = source.split("\n");
+
+		var code = '<div id="code">';
+		source.forEach(function(currentValue, index){
+			if(currentValue != '')code += '<p>' + (index+1) + '. ' + currentValue + '</p>';
+		});
+		code += '</div>';
+		document.getElementById('main').innerHTML = code;
+	}
+</script>
+</html>
