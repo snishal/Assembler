@@ -22,6 +22,7 @@
 		#source{
 			background: lightgrey;
 			padding: 30px;
+			text-align: center;
 		}
 		#assembler{
 			float: left;
@@ -97,6 +98,8 @@
 			lineNum--;
 			line = document.getElementById(lineNum);
 			line.innerHTML = "⇒ " + line.innerHTML;
+			var code = document.getElementById('code');
+			code.scroll(0, line.offsetTop - document.getElementById(1).offsetTop);
 		}
 	}
 
@@ -107,9 +110,9 @@
 			line.innerHTML = line.innerHTML.replace("⇒ ", "");
 			lineNum++;
 			nextLine.innerHTML = "⇒ " + nextLine.innerHTML;
+			var code = document.getElementById('code');
+			code.scroll(0, nextLine.offsetTop - document.getElementById(1).offsetTop);
 		}
-		var code = document.getElementById('code');
-		
 	}
 
 	function parseInstruction(instruction){
