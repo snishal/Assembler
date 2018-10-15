@@ -56,13 +56,13 @@
 	<div id="main">
 		<div id="code">
 			<div id="lineNumber">
-				<p>1</p>
-				<p>&#8658 2</p>
-				<p>3</p>
-				<p>4</p>
-				<p>5</p>
-				<p>6</p>
-				<p>7</p>
+				<p id="1">&#8658 1</p>
+				<p id="2">2</p>
+				<p id="3">3</p>
+				<p id="4">4</p>
+				<p id="5">5</p>
+				<p id="6">6</p>
+				<p id="7">7</p>
 			</div>
 			<div id="source">
 				<p>kasd</p>
@@ -98,17 +98,70 @@
 	</div>
 </body>
 <script type="text/javascript">
-	var line = 1;
+	var lineNum = 1;
+	var symbolTable = [];
 	
 	function prev(){
-		if(line > 1){
-			line--;
+		if(lineNum > 1){
+			line = document.getElementById(lineNum);
+			line.innerHTML = line.innerHTML.replace("⇒ ", "");
+			lineNum--;
+			line = document.getElementById(lineNum);
+			line.innerHTML = "⇒ " + line.innerHTML;
 		}
 	}
 
 	function next(){
-
+		var nextLine = document.getElementById(lineNum+1);
+		if(nextLine){
+			line = document.getElementById(lineNum);
+			line.innerHTML = line.innerHTML.replace("⇒ ", "");
+			lineNum++;
+			nextLine.innerHTML = "⇒ " + nextLine.innerHTML;
+		}
 	}
 
+	function parseInstruction(instruction){
+		var arr = instruction.split(" ");
+		var parsedInstruction = {
+			label: '',
+			opcode: ''
+		};
+		if(arr[0].includes(':')){
+			parsedInstruction.label = arr[0].replace(':', '');
+			parsedInstruction.opcode = arr[1];
+		}else{
+			parsedInstruction.opcode = arr[0];
+		}
+
+		return parsedInstruction;
+	}
+
+	function findLabel(label, symbolTable){
+		for(var i = 0; i < symbolTable.length; i++){
+			if(label == symbolTable[i].name)return true;
+		}
+		return false;
+	}
+
+	function pass1(source){
+		let lc = 0,
+			parsedInstruction;
+		for(var i = 0; i < source.length; i++){
+			parsedInstruction = parseInstruction(source[i]);
+			if(parsedInstruction.label != ''){
+				if(findLabel(parsedInstruction.label, symbolTable)){
+					return false
+				}else{
+					symbolTable.push({
+						name: parsedInstruction.label,
+						type: 'label',
+						size: 0,
+						Location:lc
+					})
+				}
+			}
+		}
+	}
 </script>
 </html>
