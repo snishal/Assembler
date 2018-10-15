@@ -1,0 +1,599 @@
+﻿
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2301" height="1498">
+                
+            <g>
+                <rect x="50" y="80" width="221.6" height="30" style="fill:#a5d6a7; stroke:#444; stroke-width:1"></rect>
+                    
+                <line x1="60" y1="80" x2="60" y2="110" style="fill:#a5d6a7; stroke:#444; stroke-width:1"></line>
+                <line x1="261.6" y1="80" x2="261.6" y2="110" style="fill:#a5d6a7; stroke:#444; stroke-width:1"></line>
+             
+                <title>function pass1(source)</title>
+            <text x="75" y="100" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="75" y="100">function pass1(source)</tspan>
+            </text>
+                
+            </g>
+                <g>
+                   <rect x="87" y="128.5" width="108" height="30" rx="3" ry="3" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
+                   <title>let lc = 0</title>
+            <text x="102" y="148.5" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="102" y="148.5">let lc = 0</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="87" y="177" width="240.6" height="30" rx="3" ry="3" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
+                   <title>let parsedInstruction = {*}</title>
+            <text x="102" y="197" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="102" y="197">let parsedInstruction = {*}</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="124" y="225.5" width="69" height="30" rx="2" ry="2" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
+                   <title>label</title>
+            <text x="139" y="245.5" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="139" y="245.5">label</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="124" y="274" width="76.8" height="30" rx="2" ry="2" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
+                   <title>opcode</title>
+            <text x="139" y="294" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="139" y="294">opcode</tspan>
+            </text>
+                   
+                   
+                </g><g>
+
+            <rect x="117" y="357.5" width="192.6" height="30" rx="3" ry="3" style="fill:#b39ddb; stroke:#444; stroke-width:1"></rect>
+            <polygon points="87,372.5 117,342.5 147,372.5 117,402.5" style="fill:#b39ddb; stroke:#444; stroke-width:1"></polygon>
+                
+            <title>i &lt; source.length</title>
+            <text x="162" y="377.5" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="162" y="377.5">i &lt; source.length</tspan>
+            </text>
+            
+            <text x="105.3" y="377.5" font-family="monospace" font-size="13" fill="#222">for</text>
+        </g>
+                <g>
+                   <rect x="137" y="412.5" width="53.4" height="30" rx="3" ry="3" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
+                   <title>i++</title>
+            <text x="152" y="432.5" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="152" y="432.5">i++</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="137" y="461" width="396.59999999999997" height="30" rx="3" ry="3" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
+                   <title>parsedInstruction = parseInstruction(source[i])</title>
+            <text x="152" y="481" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="152" y="481">parsedInstruction = parseInstruction(source[i])</tspan>
+            </text>
+                   
+                   
+                </g><g>
+            <rect x="167" y="524.5" width="301.79999999999995" height="30" rx="3" ry="3" style="fill:#ce93d8; stroke:#444; stroke-width:1"></rect>                
+            <polygon points="137,539.5 167,509.5 197,539.5 167,569.5" style="fill:#ce93d8; stroke:#444; stroke-width:1"></polygon>
+            <title>(parsedInstruction.label != '')</title>
+            <text x="212" y="544.5" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="212" y="544.5">(parsedInstruction.label != '')</tspan>
+            </text>
+            
+            <text x="159.2" y="544.5" font-family="monospace" font-size="13" fill="#222">if</text> <text x="174.8" y="571.45" font-family="monospace" font-size="13" fill="#222">+</text> 
+        </g><g>
+            <rect x="217" y="594.5" width="372" height="30" rx="3" ry="3" style="fill:#ce93d8; stroke:#444; stroke-width:1"></rect>                
+            <polygon points="187,609.5 217,579.5 247,609.5 217,639.5" style="fill:#ce93d8; stroke:#444; stroke-width:1"></polygon>
+            <title>(parsedInstruction.label in symbolTable)</title>
+            <text x="262" y="614.5" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="262" y="614.5">(parsedInstruction.label in symbolTable)</tspan>
+            </text>
+            
+            <text x="209.2" y="614.5" font-family="monospace" font-size="13" fill="#222">if</text> <text x="224.8" y="641.45" font-family="monospace" font-size="13" fill="#222">+</text> <text x="592.9" y="607.55" font-family="monospace" font-size="13" fill="#222">-</text>
+        </g>
+            <g>
+                <rect x="237" y="649.5" width="123.6" height="30" rx="3" ry="3" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
+                
+                <line x1="360.6" y1="659.5" x2="365.6" y2="659.5" style="fill:#a5d6a7; stroke:#444; stroke-width:1"></line>
+                
+                <line x1="360.6" y1="669.5" x2="365.6" y2="669.5" style="fill:#a5d6a7; stroke:#444; stroke-width:1"></line>
+
+                <path d="M365.6, 653.5 L381.6, 664.5 L365.6, 675.5 Z" fill="#a5d6a7" stroke="#444" stroke-width="1"></path>
+                             
+                <title>return false</title>
+            <text x="252" y="669.5" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="252" y="669.5">return false</tspan>
+            </text>
+                
+            </g>
+                <g>
+                   <rect x="649" y="649.5" width="193.79999999999998" height="30" rx="2" ry="2" style="fill:#C5E1A5; stroke:#444; stroke-width:1"></rect>
+                   <title>symbolTable.push({*})</title>
+            <text x="664" y="669.5" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="664" y="669.5">symbolTable.push({*})</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="686" y="698" width="53.4" height="30" rx="3" ry="3" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
+                   <title>{*}</title>
+            <text x="701" y="718" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="701" y="718">{*}</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="723" y="746.5" width="248.4" height="30" rx="2" ry="2" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
+                   <title>name: parseInstruction.label</title>
+            <text x="738" y="766.5" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="738" y="766.5">name: parseInstruction.label</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="723" y="795" width="123.6" height="30" rx="2" ry="2" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
+                   <title>location: lc</title>
+            <text x="738" y="815" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="738" y="815">location: lc</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="723" y="843.5" width="131.39999999999998" height="30" rx="2" ry="2" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
+                   <title>type: 'label'</title>
+            <text x="738" y="863.5" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="738" y="863.5">type: 'label'</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="723" y="892" width="84.6" height="30" rx="2" ry="2" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
+                   <title>size: 0</title>
+            <text x="738" y="912" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="738" y="912">size: 0</tspan>
+            </text>
+                   
+                   
+                </g><g>
+            <rect x="167" y="957" width="403.2" height="30" rx="3" ry="3" style="fill:#ce93d8; stroke:#444; stroke-width:1"></rect>                
+            <polygon points="137,972 167,942 197,972 167,1002" style="fill:#ce93d8; stroke:#444; stroke-width:1"></polygon>
+            <title>(parsedInstruction.opcode in directiveTable)</title>
+            <text x="212" y="977" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="212" y="977">(parsedInstruction.opcode in directiveTable)</tspan>
+            </text>
+            
+            <text x="159.2" y="977" font-family="monospace" font-size="13" fill="#222">if</text> <text x="174.8" y="1003.95" font-family="monospace" font-size="13" fill="#222">+</text> <text x="574.1" y="970.05" font-family="monospace" font-size="13" fill="#222">-</text>
+        </g><g>
+            <rect x="217" y="1027" width="333" height="30" rx="3" ry="3" style="fill:#ce93d8; stroke:#444; stroke-width:1"></rect>                
+            <polygon points="187,1042 217,1012 247,1042 217,1072" style="fill:#ce93d8; stroke:#444; stroke-width:1"></polygon>
+            <title>(parsedInstruction.opcode == 'end')</title>
+            <text x="262" y="1047" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="262" y="1047">(parsedInstruction.opcode == 'end')</tspan>
+            </text>
+            
+            <text x="209.2" y="1047" font-family="monospace" font-size="13" fill="#222">if</text> <text x="224.8" y="1073.95" font-family="monospace" font-size="13" fill="#222">+</text> <text x="553.9" y="1040.05" font-family="monospace" font-size="13" fill="#222">-</text>
+        </g>
+            <g>
+                <rect x="237" y="1082" width="115.80000000000001" height="30" rx="3" ry="3" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
+                
+                <line x1="352.8" y1="1092" x2="357.8" y2="1092" style="fill:#a5d6a7; stroke:#444; stroke-width:1"></line>
+                
+                <line x1="352.8" y1="1102" x2="357.8" y2="1102" style="fill:#a5d6a7; stroke:#444; stroke-width:1"></line>
+
+                <path d="M357.8, 1086 L373.8, 1097 L357.8, 1108 Z" fill="#a5d6a7" stroke="#444" stroke-width="1"></path>
+                             
+                <title>return true</title>
+            <text x="252" y="1102" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="252" y="1102">return true</tspan>
+            </text>
+                
+            </g><g>
+            <rect x="640" y="1097" width="364.2" height="30" rx="3" ry="3" style="fill:#ce93d8; stroke:#444; stroke-width:1"></rect>                
+            <polygon points="610,1112 640,1082 670,1112 640,1142" style="fill:#ce93d8; stroke:#444; stroke-width:1"></polygon>
+            <title>(parsedInstruction.opcode == 'segment')</title>
+            <text x="685" y="1117" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="685" y="1117">(parsedInstruction.opcode == 'segment')</tspan>
+            </text>
+            
+            <text x="632.2" y="1117" font-family="monospace" font-size="13" fill="#222">if</text> <text x="647.8" y="1143.95" font-family="monospace" font-size="13" fill="#222">+</text> <text x="1008.1" y="1110.05" font-family="monospace" font-size="13" fill="#222">-</text>
+        </g>
+                <g>
+                   <rect x="660" y="1152" width="209.4" height="30" rx="2" ry="2" style="fill:#C5E1A5; stroke:#444; stroke-width:1"></rect>
+                   <title>symbolTable.update({*})</title>
+            <text x="675" y="1172" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="675" y="1172">symbolTable.update({*})</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="697" y="1200.5" width="53.4" height="30" rx="3" ry="3" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
+                   <title>{*}</title>
+            <text x="712" y="1220.5" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="712" y="1220.5">{*}</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="734" y="1249" width="248.4" height="30" rx="2" ry="2" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
+                   <title>name: parseInstruction.label</title>
+            <text x="749" y="1269" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="749" y="1269">name: parseInstruction.label</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="734" y="1297.5" width="264" height="30" rx="2" ry="2" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
+                   <title>type: parsedInstruction.opcode</title>
+            <text x="749" y="1317.5" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="749" y="1317.5">type: parsedInstruction.opcode</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="660" y="1346" width="76.8" height="30" rx="3" ry="3" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
+                   <title>lc = 0</title>
+            <text x="675" y="1366" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="675" y="1366">lc = 0</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="1064.2" y="1152" width="443.4" height="30" rx="3" ry="3" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
+                   <title>let size = directiveTable.getSize(parsedInstruction.opcode)</title>
+            <text x="1079.2" y="1172" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="1079.2" y="1172">let size = directiveTable.getSize(parsedInstructio...</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="1064.2" y="1200.5" width="209.4" height="30" rx="2" ry="2" style="fill:#C5E1A5; stroke:#444; stroke-width:1"></rect>
+                   <title>symbolTable.update({*})</title>
+            <text x="1079.2" y="1220.5" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="1079.2" y="1220.5">symbolTable.update({*})</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="1101.2" y="1249" width="53.4" height="30" rx="3" ry="3" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
+                   <title>{*}</title>
+            <text x="1116.2" y="1269" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="1116.2" y="1269">{*}</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="1138.2" y="1297.5" width="248.4" height="30" rx="2" ry="2" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
+                   <title>name: parseInstruction.label</title>
+            <text x="1153.2" y="1317.5" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="1153.2" y="1317.5">name: parseInstruction.label</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="1138.2" y="1346" width="264" height="30" rx="2" ry="2" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
+                   <title>type: parsedInstruction.opcode</title>
+            <text x="1153.2" y="1366" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="1153.2" y="1366">type: parsedInstruction.opcode</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="1138.2" y="1394.5" width="108" height="30" rx="2" ry="2" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
+                   <title>size: size</title>
+            <text x="1153.2" y="1414.5" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="1153.2" y="1414.5">size: size</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="1064.2" y="1443" width="108" height="30" rx="3" ry="3" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
+                   <title>lc += size</title>
+            <text x="1079.2" y="1463" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="1079.2" y="1463">lc += size</tspan>
+            </text>
+                   
+                   
+                </g><g>
+            <rect x="1597.6" y="1027" width="473.4" height="30" rx="3" ry="3" style="fill:#ce93d8; stroke:#444; stroke-width:1"></rect>                
+            <polygon points="1567.6,1042 1597.6,1012 1627.6,1042 1597.6,1072" style="fill:#ce93d8; stroke:#444; stroke-width:1"></polygon>
+            <title>(parsedInstruction.opcode in machineInstructionTable)</title>
+            <text x="1642.6" y="1047" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="1642.6" y="1047">(parsedInstruction.opcode in machineInstructionTab...</tspan>
+            </text>
+            
+            <text x="1589.8" y="1047" font-family="monospace" font-size="13" fill="#222">if</text> <text x="1605.3999999999999" y="1073.95" font-family="monospace" font-size="13" fill="#222">+</text> <text x="2074.9" y="1040.05" font-family="monospace" font-size="13" fill="#222">-</text>
+        </g>
+                <g>
+                   <rect x="1617.6" y="1082" width="443.4" height="30" rx="3" ry="3" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
+                   <title>lc += machineInstructionTable.getSize(parsedInstruction.opcode)</title>
+            <text x="1632.6" y="1102" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="1632.6" y="1102">lc += machineInstructionTable.getSize(parsedInstru...</tspan>
+            </text>
+                   
+                   
+                </g>
+            <g>
+                <rect x="2131" y="1082" width="123.6" height="30" rx="3" ry="3" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
+                
+                <line x1="2254.6" y1="1092" x2="2259.6" y2="1092" style="fill:#a5d6a7; stroke:#444; stroke-width:1"></line>
+                
+                <line x1="2254.6" y1="1102" x2="2259.6" y2="1102" style="fill:#a5d6a7; stroke:#444; stroke-width:1"></line>
+
+                <path d="M2259.6, 1086 L2275.6, 1097 L2259.6, 1108 Z" fill="#a5d6a7" stroke="#444" stroke-width="1"></path>
+                             
+                <title>return false</title>
+            <text x="2146" y="1102" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="2146" y="1102">return false</tspan>
+            </text>
+                
+            </g>
+            <g>
+               <rect x="25" y="13.75" width="216.6" height="24" style="fill:#fff59d; stroke:#444; stroke-width:1"></rect>
+               <circle cx="25" cy="25" r="15" style="fill:#fff59d; stroke:#444; stroke-width:1"></circle>
+               <title>Program: source module</title>
+            <text x="55" y="30" font-family="monospace" font-size="13" fill="#222">
+                <tspan x="55" y="30">Program: source module</tspan>
+            </text>
+            </g>
+            <g>
+               <path d="M25, 40 L25 91 Q25 95
+                29 95
+                L42 95 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               <path d="M42, 92 L50, 95 L42, 98 Z" fill="#333"></path>
+            </g>
+            <g>
+               <path d="M68.5, 110 L68.5 139.5 Q68.5 143.5
+                72.5 143.5
+                L79 143.5 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               <path d="M79, 140.5 L87, 143.5 L79, 146.5 Z" fill="#333"></path>
+            </g>
+            <g>
+               <path d="M68.5, 110 L68.5 188 Q68.5 192
+                72.5 192
+                L79 192 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               <path d="M79, 189 L87, 192 L79, 195 Z" fill="#333"></path>
+            </g>
+            <g>
+               <path d="M105.5, 207 L105.5 236.5 Q105.5 240.5
+                109.5 240.5
+                L124 240.5 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               false
+            </g>
+            <g>
+               <path d="M105.5, 207 L105.5 285 Q105.5 289
+                109.5 289
+                L124 289 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               false
+            </g>
+            <g>
+               <path d="M68.5, 110 L68.5 368.5 Q68.5 372.5
+                72.5 372.5
+                L79 372.5 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               <path d="M79, 369.5 L87, 372.5 L79, 375.5 Z" fill="#333"></path>
+            </g>
+            <g>
+               <path d="M117, 402.5 L117 423.5 Q117 427.5
+                121 427.5
+                L129 427.5 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               <path d="M129, 424.5 L137, 427.5 L129, 430.5 Z" fill="#333"></path>
+            </g>
+            <g>
+               <path d="M117, 402.5 L117 472 Q117 476
+                121 476
+                L129 476 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               <path d="M129, 473 L137, 476 L129, 479 Z" fill="#333"></path>
+            </g>
+            <g>
+               <path d="M117, 402.5 L117 535.5 Q117 539.5
+                121 539.5
+                L129 539.5 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               <path d="M129, 536.5 L137, 539.5 L129, 542.5 Z" fill="#333"></path>
+            </g>
+            <g>
+               <path d="M167, 569.5 L167 605.5 Q167 609.5
+                171 609.5
+                L179 609.5 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               <path d="M179, 606.5 L187, 609.5 L179, 612.5 Z" fill="#333"></path>
+            </g>
+            <g>
+               <path d="M217, 639.5 L217 660.5 Q217 664.5
+                221 664.5
+                L229 664.5 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               <path d="M229, 661.5 L237, 664.5 L229, 667.5 Z" fill="#333"></path>
+            </g>
+            <g>
+               <path d="M589, 609.5 L625 609.5  Q629 609.5
+                629 613.5
+                L629 656.5 Q629 664.5
+                633 664.5
+                L641 664.5 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               <path d="M641, 661.5 L649, 664.5 L641, 667.5 Z" fill="#333"></path>
+            </g>
+            <g>
+               <path d="M667.5, 679.5 L667.5 709 Q667.5 713
+                671.5 713
+                L678 713 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               <path d="M678, 710 L686, 713 L678, 716 Z" fill="#333"></path>
+            </g>
+            <g>
+               <path d="M704.5, 728 L704.5 757.5 Q704.5 761.5
+                708.5 761.5
+                L723 761.5 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               false
+            </g>
+            <g>
+               <path d="M704.5, 728 L704.5 806 Q704.5 810
+                708.5 810
+                L723 810 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               false
+            </g>
+            <g>
+               <path d="M704.5, 728 L704.5 854.5 Q704.5 858.5
+                708.5 858.5
+                L723 858.5 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               false
+            </g>
+            <g>
+               <path d="M704.5, 728 L704.5 903 Q704.5 907
+                708.5 907
+                L723 907 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               false
+            </g>
+            <g>
+               <path d="M117, 402.5 L117 968 Q117 972
+                121 972
+                L129 972 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               <path d="M129, 969 L137, 972 L129, 975 Z" fill="#333"></path>
+            </g>
+            <g>
+               <path d="M167, 1002 L167 1038 Q167 1042
+                171 1042
+                L179 1042 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               <path d="M179, 1039 L187, 1042 L179, 1045 Z" fill="#333"></path>
+            </g>
+            <g>
+               <path d="M217, 1072 L217 1093 Q217 1097
+                221 1097
+                L229 1097 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               <path d="M229, 1094 L237, 1097 L229, 1100 Z" fill="#333"></path>
+            </g>
+            <g>
+               <path d="M550, 1042 L586 1042  Q590 1042
+                590 1046
+                L590 1104 Q590 1112
+                594 1112
+                L602 1112 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               <path d="M602, 1109 L610, 1112 L602, 1115 Z" fill="#333"></path>
+            </g>
+            <g>
+               <path d="M640, 1142 L640 1163 Q640 1167
+                644 1167
+                L652 1167 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               <path d="M652, 1164 L660, 1167 L652, 1170 Z" fill="#333"></path>
+            </g>
+            <g>
+               <path d="M678.5, 1182 L678.5 1211.5 Q678.5 1215.5
+                682.5 1215.5
+                L689 1215.5 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               <path d="M689, 1212.5 L697, 1215.5 L689, 1218.5 Z" fill="#333"></path>
+            </g>
+            <g>
+               <path d="M715.5, 1230.5 L715.5 1260 Q715.5 1264
+                719.5 1264
+                L734 1264 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               false
+            </g>
+            <g>
+               <path d="M715.5, 1230.5 L715.5 1308.5 Q715.5 1312.5
+                719.5 1312.5
+                L734 1312.5 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               false
+            </g>
+            <g>
+               <path d="M640, 1142 L640 1357 Q640 1361
+                644 1361
+                L652 1361 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               <path d="M652, 1358 L660, 1361 L652, 1364 Z" fill="#333"></path>
+            </g>
+            <g>
+               <path d="M1004.2, 1112 L1040.2 1112  Q1044.2 1112
+                1044.2 1116
+                L1044.2 1159 Q1044.2 1167
+                1048.2 1167
+                L1056.2 1167 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               <path d="M1056.2, 1164 L1064.2, 1167 L1056.2, 1170 Z" fill="#333"></path>
+            </g>
+            <g>
+               <path d="M1004.2, 1112 L1040.2 1112  Q1044.2 1112
+                1044.2 1116
+                L1044.2 1207.5 Q1044.2 1215.5
+                1048.2 1215.5
+                L1056.2 1215.5 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               <path d="M1056.2, 1212.5 L1064.2, 1215.5 L1056.2, 1218.5 Z" fill="#333"></path>
+            </g>
+            <g>
+               <path d="M1082.7, 1230.5 L1082.7 1260 Q1082.7 1264
+                1086.7 1264
+                L1093.2 1264 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               <path d="M1093.2, 1261 L1101.2, 1264 L1093.2, 1267 Z" fill="#333"></path>
+            </g>
+            <g>
+               <path d="M1119.7, 1279 L1119.7 1308.5 Q1119.7 1312.5
+                1123.7 1312.5
+                L1138.2 1312.5 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               false
+            </g>
+            <g>
+               <path d="M1119.7, 1279 L1119.7 1357 Q1119.7 1361
+                1123.7 1361
+                L1138.2 1361 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               false
+            </g>
+            <g>
+               <path d="M1119.7, 1279 L1119.7 1405.5 Q1119.7 1409.5
+                1123.7 1409.5
+                L1138.2 1409.5 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               false
+            </g>
+            <g>
+               <path d="M1004.2, 1112 L1040.2 1112  Q1044.2 1112
+                1044.2 1116
+                L1044.2 1450 Q1044.2 1458
+                1048.2 1458
+                L1056.2 1458 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               <path d="M1056.2, 1455 L1064.2, 1458 L1056.2, 1461 Z" fill="#333"></path>
+            </g>
+            <g>
+               <path d="M570.2, 972 L1543.6 972  Q1547.6 972
+                1547.6 976
+                L1547.6 1034 Q1547.6 1042
+                1551.6 1042
+                L1559.6 1042 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               <path d="M1559.6, 1039 L1567.6, 1042 L1559.6, 1045 Z" fill="#333"></path>
+            </g>
+            <g>
+               <path d="M1597.6, 1072 L1597.6 1093 Q1597.6 1097
+                1601.6 1097
+                L1609.6 1097 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               <path d="M1609.6, 1094 L1617.6, 1097 L1609.6, 1100 Z" fill="#333"></path>
+            </g>
+            <g>
+               <path d="M2071, 1042 L2107 1042  Q2111 1042
+                2111 1046
+                L2111 1089 Q2111 1097
+                2115 1097
+                L2123 1097 " style="fill:none; stroke:#444; stroke-width:1"></path>
+               <path d="M2123, 1094 L2131, 1097 L2123, 1100 Z" fill="#333"></path>
+            </g>
+            <g>
+               <path d="M2275.6, 1097 L2291.6 1097  Q2295.6 1097
+                2295.6 1093
+                L2295.6 330.5 Q2295.6 322.5
+                2291.6 322.5
+                L125 322.5  Q117 322.5
+                117 326.5
+                L117 334.5" style="fill:none; stroke:#444; stroke-width:1"></path>
+               <path d="M114, 334.5 L117, 342.5 L120, 334.5 Z" fill="#333"></path>
+            </g>
+            </svg>
