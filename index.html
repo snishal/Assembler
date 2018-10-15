@@ -39,21 +39,11 @@
 		var code = document.getElementById('source').value;
 		code = code.split("\n");
 
-		var lineNumber = 1;
-		var lineNumbers = '<div id="lineNumber">';
-		var source = '<div id="source">';
-		code.forEach(function(currentValue, index){
-			if(currentValue != ''){
-				if(lineNumber == 1)lineNumbers += '<p id="' + lineNumber + '">⇒ ' + lineNumber + '</p>';
-				else lineNumbers += '<p id="' + lineNumber + '">' + lineNumber + '</p>';
-				lineNumber++;
-				source += '<p>' + currentValue + '</p>';
-			}
+		code = code.filter(function(instruction) {
+  			return instruction != '';
 		});
-		lineNumbers += '</div>';
-		source += '</div>';
 
-		sessionStorage.setItem('code',lineNumbers + source);
+		sessionStorage.setItem('code', JSON.stringify(code));
 		document.location.href = '/test.html';
 	}
 </script>

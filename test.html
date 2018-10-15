@@ -39,14 +39,21 @@
 			border: none;
 			background-color: #33adff;
 			color: white;
-			margin-top: 5%;
-			margin-left: 7%;
+			margin-left: 55px;
 		}
 		.btn:hover{
 			box-shadow: 5px 10px #888888;
 		}
 		.active{
 			stroke: red !important;	
+		}
+		#footer{
+			padding: 20px;
+			position: fixed;
+		    left: 0;
+		    bottom: 0;
+		    width: 100%;
+		    color: white;
 		}
 	</style>
 </head>
@@ -61,35 +68,106 @@
 			</div>
 			<div>
 				<h2>Symbol Table</h2>
-				<table id="symbolTable">
-					<th>
-						<td>Name</td>
-						<td>Type</td>
-						<td>Size</td>
-						<td>Location</td>
-					</th>
+				<table>
+					<thead>
+						<tr>
+							<td>Name</td>
+							<td>Type</td>
+							<td>Size</td>
+							<td>Location</td>
+						</tr>
+					</thead>
+					<tbody id="symbolTable">
+					</tbody>
 				</table>
 			</div>
 		</div>
-		<div>
-			<button class="btn" onclick="prev()">Prev</button>
-			<button class="btn" onclick="next()">Next</button>
-			<button class="btn">Last</button>
-		</div>
+	</div>
+	<div id="footer">
+		<button class="btn" onclick="prev()">Prev</button>
+		<button class="btn" onclick="next()">Next</button>
+		<button class="btn">Last</button>
 	</div>
 </body>
 <script type="text/javascript">
+	
+	directiveTable = [{
+		name: 'BYTE',
+		size: 1
+	},{
+		name: 'Word',
+		size: 2
+	},{
+		name: 'DOUBLEWORD',
+		size: 4
+	},{
+		name: 'END',
+		size: 0
+	},{
+		name: 'SEGMENT',
+		size: 0
+	}];
+
+	machineInstructionTable = [{
+		name: 'MOV',
+		size: 4
+	},{
+		name: 'JMP',
+		size: 4
+	},{
+		name: 'ADD',
+		size: 8
+	},{
+		name: 'SUB',
+		size: 8
+	},{
+		name: 'ADC',
+		size: 8
+	},{
+		name: 'SBB',
+		size: 8
+	},{
+		name: 'LOOP',
+		size: 4
+	}];
+
+	var lineNum = 1;
+	var symbolTable = [];
+
 	function loadCode(){
-		var code = sessionStorage.getItem('code');
+		var code = JSON.parse(sessionStorage.getItem('code'));
 		if(code){
-			document.getElementById('code').innerHTML = code;
+			var lineNumber = 1;
+			var lineNumbers = '<div id="lineNumber">';
+			var source = '<div id="source">';
+			code.forEach(function(currentValue){
+				if(currentValue != ''){
+					if(lineNumber == 1)lineNumbers += '<p id="' + lineNumber + '">⇒ ' + lineNumber + '</p>';
+					else lineNumbers += '<p id="' + lineNumber + '">' + lineNumber + '</p>';
+					lineNumber++;
+					source += '<p>' + currentValue + '</p>';
+				}
+			});
+			lineNumbers += '</div>';
+			source += '</div>';
+			document.getElementById('code').innerHTML = lineNumbers + source;
 		}else{
 			document.location.href = '/';
 		}
 	}
 
-	var lineNum = 1;
-	var symbolTable = [];
+	function buildSymbolTable(){
+		var table = '';
+		symbolTable.forEach(function(object){
+			table += '<tr>';
+			table += '<td>' + object.name + '</td>';
+			table += '<td>' + object.type + '</td>';
+			table += '<td>' + object.size + '</td>';
+			table += '<td>' + object.location + '</td>';
+			table += '</tr>'; 
+		})
+		document.getElementById('symbolTable').innerHTML = table;
+	}
 	
 	function prev(){
 		if(lineNum > 1){
@@ -123,9 +201,9 @@
 		};
 		if(arr[0].includes(':')){
 			parsedInstruction.label = arr[0].replace(':', '');
-			parsedInstruction.opcode = arr[1];
+			parsedInstruction.opcode = arr[1].toUpperCase();
 		}else{
-			parsedInstruction.opcode = arr[0];
+			parsedInstruction.opcode = arr[0].toUpperCase();
 		}
 
 		return parsedInstruction;
@@ -136,6 +214,36 @@
 			if(label == symbolTable[i].name)return true;
 		}
 		return false;
+	}
+
+	function update(symbolTable, object){
+		for(var i = 0; i < symbolTable.length; i++){
+			if(object.name == symbolTable[i].name){
+				for(var propertyName in object) {
+					if(propertyName != 'name'){
+						symbolTable[i].propertyName = object.propertyName;
+					}
+				}				
+			}
+		}
+	}
+
+	function check(table, opcode){
+		for(var i = 0; i < table.length; i++){
+			if(opcode == table[i].name){
+				return true;				
+			}
+		}
+		return false;
+	}
+
+	function getSize(table, opcode){
+		for(var i = 0; i < table.length; i++){
+			if(opcode == table[i].name){
+				return table[i].size;				
+			}
+		}
+		return 0;
 	}
 
 	function pass1(source){
@@ -155,7 +263,31 @@
 					})
 				}
 			}
+			if(check(directiveTable, parsedInstruction.opcode)){
+				if(parsedInstruction.opcode == 'END'){
+					return true;
+				}else if(parsedInstruction.opcode == 'SEGMENT'){
+					update(symbolTable, {
+						name: parsedInstruction.label,
+						type: parsedInstruction.opcode
+					})
+					lc = 0;
+				}else{
+					let size = getSize(directiveTable, parsedInstruction.opcode);
+					update(symbolTable, {
+						name: parsedInstruction.label,
+						type: parsedInstruction.opcode,
+						size: size
+					})
+					lc += size;
+				}
+			}else if(check(machineInstructionTable, parsedInstruction.opcode)){
+				lc += getSize(machineInstructionTable, parsedInstruction.opcode);
+			}else{
+				return false;
+			}
 		}
+		return true;
 	}
 </script>
 </html>
