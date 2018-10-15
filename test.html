@@ -10,20 +10,18 @@
 			float: left;
 			width: 25%;
 			margin-left: 5%;
+			height: 500px;
+			overflow: auto;
 		}
 		#lineNumber{
 			float: left;
 			background: mediumblue;
 			color: white;
-			height: 500px;
 			padding: 30px;
-			overflow: auto;
 		}
 		#source{
 			background: lightgrey;
-			height: 500px;
 			padding: 30px;
-			overflow: auto;
 		}
 		#assembler{
 			float: left;
@@ -51,33 +49,10 @@
 		}
 	</style>
 </head>
-<body>
+<body onload="loadCode()">
 	<center><h1>Visualize Assembler</h1></center>
 	<div id="main">
 		<div id="code">
-			<div id="lineNumber">
-				<p id="1">&#8658 1</p>
-				<p id="2">2</p>
-				<p id="3">3</p>
-				<p id="4">4</p>
-				<p id="5">5</p>
-				<p id="6">6</p>
-				<p id="7">7</p>
-			</div>
-			<div id="source">
-				<p>kasd</p>
-				<p>asdhk</p>
-				<p>asdhkja</p>
-				<p>ashdk</p>
-				<p>asjjdk</p>
-				<p>asnjdka</p>
-				<p>sjadk</p>
-			</div>
-			<div>
-				<button class="btn" onclick="prev()">Prev</button>
-				<button class="btn" onclick="next()">Next</button>
-				<button class="btn">Last</button>
-			</div>
 		</div>
 		<div id="assembler">
 			<div id="svg">
@@ -95,9 +70,23 @@
 				</table>
 			</div>
 		</div>
+		<div>
+			<button class="btn" onclick="prev()">Prev</button>
+			<button class="btn" onclick="next()">Next</button>
+			<button class="btn">Last</button>
+		</div>
 	</div>
 </body>
 <script type="text/javascript">
+	function loadCode(){
+		var code = sessionStorage.getItem('code');
+		if(code){
+			document.getElementById('code').innerHTML = code;
+		}else{
+			document.location.href = '/';
+		}
+	}
+
 	var lineNum = 1;
 	var symbolTable = [];
 	
@@ -119,6 +108,8 @@
 			lineNum++;
 			nextLine.innerHTML = "⇒ " + nextLine.innerHTML;
 		}
+		var code = document.getElementById('code');
+		
 	}
 
 	function parseInstruction(instruction){

@@ -36,15 +36,25 @@
 </body>
 <script type="text/javascript">
 	function assemble(){
-		var source = document.getElementById('source').value;
-		source = source.split("\n");
+		var code = document.getElementById('source').value;
+		code = code.split("\n");
 
-		var code = '<div id="code">';
-		source.forEach(function(currentValue, index){
-			if(currentValue != '')code += '<p>' + (index+1) + '. ' + currentValue + '</p>';
+		var lineNumber = 1;
+		var lineNumbers = '<div id="lineNumber">';
+		var source = '<div id="source">';
+		code.forEach(function(currentValue, index){
+			if(currentValue != ''){
+				if(lineNumber == 1)lineNumbers += '<p id="' + lineNumber + '">⇒ ' + lineNumber + '</p>';
+				else lineNumbers += '<p id="' + lineNumber + '">' + lineNumber + '</p>';
+				lineNumber++;
+				source += '<p>' + currentValue + '</p>';
+			}
 		});
-		code += '</div>';
-		document.getElementById('main').innerHTML = code;
+		lineNumbers += '</div>';
+		source += '</div>';
+
+		sessionStorage.setItem('code',lineNumbers + source);
+		document.location.href = '/test.html';
 	}
 </script>
 </html>

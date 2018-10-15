@@ -1,0 +1,32 @@
+MOV AX, 0
+label: MOV AX, var
+ADD AX, BX
+MOV DX, AX
+
+
+MOV AX, 0
+label: MOV AX, var
+ADD AX, BX
+MOV DX, AX
+
+MOV AX, 0
+label: MOV AX, var
+ADD AX, BX
+MOV DX, AX
+
+MOV AX, 0
+label: MOV AX, var
+ADD AX, BX
+MOV DX, AX
+
+
+MOV AX, 0
+label: MOV AX, var
+ADD AX, BX
+MOV DX, AX
+
+
+MOV AX, 0
+label: MOV AX, var
+ADD AX, BX
+MOV DX, AX
