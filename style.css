@@ -1,0 +1,52 @@
+*{
+	box-sizing: border-box;
+}
+#code{
+	float: left;
+	width: 25%;
+	margin-left: 5%;
+	height: 500px;
+	overflow: auto;
+}
+#lineNumber{
+	float: left;
+	background: mediumblue;
+	color: white;
+	padding: 30px;
+}
+#source{
+	background: lightgrey;
+	padding: 30px;
+	text-align: center;
+}
+#assembler{
+	float: left;
+	width: 60%;
+	margin-left: 5%;
+}
+#svg{
+	height: 300px;
+	overflow: auto;
+}
+.btn{
+	cursor: pointer;
+	padding: 10px 30px;
+	border: none;
+	background-color: #33adff;
+	color: white;
+	margin-left: 55px;
+}
+.btn:hover{
+	box-shadow: 5px 10px #888888;
+}
+.active{
+	stroke: red !important;	
+}
+#footer{
+	padding: 20px;
+	position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+}

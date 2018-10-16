@@ -1,19 +1,19 @@
 ﻿
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1607" height="819">
                 
-            <g>
-                <rect x="50" y="80" width="323" height="30" style="fill:#a5d6a7; stroke:#444; stroke-width:1"></rect>
+            <g id = 'state0'>
+                <rect x="50" y="80" width="221.6" height="30" style="fill:#a5d6a7; stroke:#444; stroke-width:1"></rect>
                     
                 <line x1="60" y1="80" x2="60" y2="110" style="fill:#a5d6a7; stroke:#444; stroke-width:1"></line>
-                <line x1="363" y1="80" x2="363" y2="110" style="fill:#a5d6a7; stroke:#444; stroke-width:1"></line>
+                <line x1="261.6" y1="80" x2="261.6" y2="110" style="fill:#a5d6a7; stroke:#444; stroke-width:1"></line>
              
-                <title>function indexSearch(list, element)</title>
+                <title>function pass1(source)</title>
             <text x="75" y="100" font-family="monospace" font-size="13" fill="#222">
-                <tspan x="75" y="100">function indexSearch(list, element)</tspan>
+                <tspan x="75" y="100">function pass1(source)</tspan>
             </text>
                 
             </g>
-                <g>
+                <g id = 'state1'>
                    <rect x="87" y="128.5" width="108" height="30" rx="3" ry="3" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
                    <title>let lc = 0</title>
             <text x="102" y="148.5" font-family="monospace" font-size="13" fill="#222">
@@ -21,7 +21,7 @@
             </text>
                    
                    
-                </g><g>
+                </g><g id = 'state2'>
 
             <rect x="117" y="212" width="91.2" height="30" rx="3" ry="3" style="fill:#b39ddb; stroke:#444; stroke-width:1"></rect>
             <polygon points="87,227 117,197 147,227 117,257" style="fill:#b39ddb; stroke:#444; stroke-width:1"></polygon>
@@ -33,7 +33,7 @@
             
             <text x="97.5" y="232" font-family="monospace" font-size="13" fill="#222">while</text>
         </g>
-                <g>
+                <g  id = 'state3'>
                    <rect x="137" y="267" width="170.4" height="30" rx="2" ry="2" style="fill:#C5E1A5; stroke:#444; stroke-width:1"></rect>
                    <title>parseInstruction()</title>
             <text x="152" y="287" font-family="monospace" font-size="13" fill="#222">
@@ -41,7 +41,7 @@
             </text>
                    
                    
-                </g><g>
+                </g><g id = 'state4'>
             <rect x="167" y="330.5" width="153.6" height="30" rx="3" ry="3" style="fill:#ce93d8; stroke:#444; stroke-width:1"></rect>                
             <polygon points="137,345.5 167,315.5 197,345.5 167,375.5" style="fill:#ce93d8; stroke:#444; stroke-width:1"></polygon>
             <title>(labelFound)</title>
@@ -50,7 +50,7 @@
             </text>
             
             <text x="159.2" y="350.5" font-family="monospace" font-size="13" fill="#222">if</text> <text x="174.8" y="377.45" font-family="monospace" font-size="13" fill="#222">+</text> 
-        </g><g>
+        </g><g  id = 'state5'>
             <rect x="217" y="400.5" width="231.60000000000002" height="30" rx="3" ry="3" style="fill:#ce93d8; stroke:#444; stroke-width:1"></rect>                
             <polygon points="187,415.5 217,385.5 247,415.5 217,445.5" style="fill:#ce93d8; stroke:#444; stroke-width:1"></polygon>
             <title>(label in symbolTable)</title>
@@ -60,7 +60,7 @@
             
             <text x="209.2" y="420.5" font-family="monospace" font-size="13" fill="#222">if</text> <text x="224.8" y="447.45" font-family="monospace" font-size="13" fill="#222">+</text> <text x="452.5" y="413.55" font-family="monospace" font-size="13" fill="#222">-</text>
         </g>
-            <g>
+            <g id = 'state6'>
                 <rect x="237" y="455.5" width="123.6" height="30" rx="3" ry="3" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
                 
                 <line x1="360.6" y1="465.5" x2="365.6" y2="465.5" style="fill:#a5d6a7; stroke:#444; stroke-width:1"></line>
@@ -75,7 +75,7 @@
             </text>
                 
             </g>
-                <g>
+                <g id = 'state7'>
                    <rect x="508.6" y="455.5" width="209.4" height="30" rx="2" ry="2" style="fill:#C5E1A5; stroke:#444; stroke-width:1"></rect>
                    <title>symbolTable.push(label)</title>
             <text x="523.6" y="475.5" font-family="monospace" font-size="13" fill="#222">
@@ -83,7 +83,7 @@
             </text>
                    
                    
-                </g><g>
+                </g><g id = 'state8'>
             <rect x="167" y="520.5" width="262.79999999999995" height="30" rx="3" ry="3" style="fill:#ce93d8; stroke:#444; stroke-width:1"></rect>                
             <polygon points="137,535.5 167,505.5 197,535.5 167,565.5" style="fill:#ce93d8; stroke:#444; stroke-width:1"></polygon>
             <title>(opcode in directiveTable)</title>
@@ -92,7 +92,7 @@
             </text>
             
             <text x="159.2" y="540.5" font-family="monospace" font-size="13" fill="#222">if</text> <text x="174.8" y="567.45" font-family="monospace" font-size="13" fill="#222">+</text> <text x="433.69999999999993" y="533.55" font-family="monospace" font-size="13" fill="#222">-</text>
-        </g><g>
+        </g><g id = 'state9'>
             <rect x="217" y="590.5" width="192.6" height="30" rx="3" ry="3" style="fill:#ce93d8; stroke:#444; stroke-width:1"></rect>                
             <polygon points="187,605.5 217,575.5 247,605.5 217,635.5" style="fill:#ce93d8; stroke:#444; stroke-width:1"></polygon>
             <title>(opcode == 'end')</title>
@@ -102,8 +102,8 @@
             
             <text x="209.2" y="610.5" font-family="monospace" font-size="13" fill="#222">if</text> <text x="224.8" y="637.45" font-family="monospace" font-size="13" fill="#222">+</text> <text x="413.5" y="603.55" font-family="monospace" font-size="13" fill="#222">-</text>
         </g>
-            <g>
-                <rect x="237" y="645.5" width="115.80000000000001" height="30" rx="3" ry="3" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
+            <g id = 'state10'>
+                <rect id = "rect" x="237" y="645.5" width="115.80000000000001" height="30" rx="3" ry="3" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
                 
                 <line x1="352.8" y1="655.5" x2="357.8" y2="655.5" style="fill:#a5d6a7; stroke:#444; stroke-width:1"></line>
                 
@@ -116,7 +116,7 @@
                 <tspan x="252" y="665.5">return true</tspan>
             </text>
                 
-            </g><g>
+            </g><g  id = 'state11'>
             <rect x="499.6" y="660.5" width="223.79999999999998" height="30" rx="3" ry="3" style="fill:#ce93d8; stroke:#444; stroke-width:1"></rect>                
             <polygon points="469.6,675.5 499.6,645.5 529.6,675.5 499.6,705.5" style="fill:#ce93d8; stroke:#444; stroke-width:1"></polygon>
             <title>(opcode == 'segment')</title>
@@ -126,7 +126,7 @@
             
             <text x="491.8" y="680.5" font-family="monospace" font-size="13" fill="#222">if</text> <text x="507.40000000000003" y="707.45" font-family="monospace" font-size="13" fill="#222">+</text> <text x="727.3" y="673.55" font-family="monospace" font-size="13" fill="#222">-</text>
         </g>
-                <g>
+                <g  id = 'state12'>
                    <rect x="519.6" y="715.5" width="178.2" height="30" rx="2" ry="2" style="fill:#C5E1A5; stroke:#444; stroke-width:1"></rect>
                    <title>updateSymbolTable()</title>
             <text x="534.6" y="735.5" font-family="monospace" font-size="13" fill="#222">
@@ -135,7 +135,7 @@
                    
                    
                 </g>
-                <g>
+                <g  id = 'state13'>
                    <rect x="519.6" y="764" width="76.8" height="30" rx="3" ry="3" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
                    <title>lc = 0</title>
             <text x="534.6" y="784" font-family="monospace" font-size="13" fill="#222">
@@ -144,7 +144,7 @@
                    
                    
                 </g>
-                <g>
+                <g id = 'state14'>
                    <rect x="783.4" y="715.5" width="170.4" height="30" rx="2" ry="2" style="fill:#C5E1A5; stroke:#444; stroke-width:1"></rect>
                    <title>updateSymbolTabe()</title>
             <text x="798.4" y="735.5" font-family="monospace" font-size="13" fill="#222">
@@ -153,7 +153,7 @@
                    
                    
                 </g>
-                <g>
+                <g id = 'state15'>
                    <rect x="783.4" y="764" width="108" height="30" rx="3" ry="3" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
                    <title>lc += size</title>
             <text x="798.4" y="784" font-family="monospace" font-size="13" fill="#222">
@@ -161,7 +161,7 @@
             </text>
                    
                    
-                </g><g>
+                </g><g id = 'state16'>
             <rect x="1043.8" y="590.5" width="333" height="30" rx="3" ry="3" style="fill:#ce93d8; stroke:#444; stroke-width:1"></rect>                
             <polygon points="1013.8,605.5 1043.8,575.5 1073.8,605.5 1043.8,635.5" style="fill:#ce93d8; stroke:#444; stroke-width:1"></polygon>
             <title>(opcode in machineInstructionTable)</title>
@@ -171,7 +171,7 @@
             
             <text x="1036" y="610.5" font-family="monospace" font-size="13" fill="#222">if</text> <text x="1051.6" y="637.45" font-family="monospace" font-size="13" fill="#222">+</text> <text x="1380.7" y="603.55" font-family="monospace" font-size="13" fill="#222">-</text>
         </g>
-                <g>
+                <g id = 'state17'>
                    <rect x="1063.8" y="645.5" width="108" height="30" rx="3" ry="3" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
                    <title>lc += size</title>
             <text x="1078.8" y="665.5" font-family="monospace" font-size="13" fill="#222">
@@ -180,7 +180,7 @@
                    
                    
                 </g>
-            <g>
+            <g id = 'state18'>
                 <rect x="1436.8" y="645.5" width="123.6" height="30" rx="3" ry="3" style="fill:#90caf9; stroke:#444; stroke-width:1"></rect>
                 
                 <line x1="1560.3999999999999" y1="655.5" x2="1565.3999999999999" y2="655.5" style="fill:#a5d6a7; stroke:#444; stroke-width:1"></line>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assembler</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body onload="loadCode()">
+	<center><h1>Visualize Assembler</h1></center>
+	<div id="main">
+		<div id="code">
+		</div>
+		<div id="assembler">
+			<div id="svg">
+				<embed src="partial.svg"/>
+			</div>
+			<div>
+				<h2>Symbol Table</h2>
+				<table>
+					<thead>
+						<tr>
+							<td>Name</td>
+							<td>Type</td>
+							<td>Size</td>
+							<td>Location</td>
+						</tr>
+					</thead>
+					<tbody id="symbolTable">
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<button class="btn" onclick="prev()">Prev</button>
+		<button class="btn" onclick="next()">Next</button>
+		<button class="btn">Last</button>
+	</div>
+</body>
+<script type="text/javascript" src="assembler.js" ></script>
+<script type="text/javascript" src="main.js" ></script>
+</html>
