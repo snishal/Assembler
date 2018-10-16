@@ -56,19 +56,19 @@ function parseInstruction(instruction){
 	return parsedInstruction;
 }
 
-function findLabel(label, symbolTable){
+function findLabel(label){
 	for(var i = 0; i < symbolTable.length; i++){
 		if(label == symbolTable[i].name)return true;
 	}
 	return false;
 }
 
-function update(symbolTable, object){
+function updateSymbolTable(object){
 	for(var i = 0; i < symbolTable.length; i++){
 		if(object.name == symbolTable[i].name){
 			for(var propertyName in object) {
 				if(propertyName != 'name'){
-					symbolTable[i].propertyName = object.propertyName;
+					symbolTable[i][propertyName] = object[propertyName];
 				}
 			}				
 		}

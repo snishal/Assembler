@@ -1,7 +1,8 @@
+DATA: Segment
 MOV AX, 0
 label: MOV AX, var
-ADD AX, BX
-MOV DX, AX
+label1: ADD AX, BX
+var: MOV DX, AX
 
 
 MOV AX, 0

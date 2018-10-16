@@ -9,10 +9,9 @@ function loadCode(){
 		var sourceDiv = '<div id="source">';
 		code.forEach(function(currentValue){
 			if(currentValue != ''){
-				if(lineNumber == 1)lineNumbers += '<p id="' + lineNumber + '">⇒ ' + lineNumber + '</p>';
-				else lineNumbers += '<p id="' + lineNumber + '">' + lineNumber + '</p>';
+				lineNumbers += '<p>' + lineNumber + '</p>';
+				sourceDiv += '<p id="' + lineNumber + '">' + currentValue + '</p>';
 				lineNumber++;
-				sourceDiv += '<p>' + currentValue + '</p>';
 			}
 		});
 		lineNumbers += '</div>';
@@ -38,7 +37,7 @@ function buildSymbolTable(){
 }
 
 function prev(){
-	if(lineNum > 1){
+	/*if(lineNum > 1){
 		line = document.getElementById(lineNum);
 		line.innerHTML = line.innerHTML.replace("⇒ ", "");
 		lineNum--;
@@ -46,7 +45,7 @@ function prev(){
 		line.innerHTML = "⇒ " + line.innerHTML;
 		var code = document.getElementById('code');
 		code.scroll(0, line.offsetTop - document.getElementById(1).offsetTop);
-	}
+	}*/
 }
 
 func = [
@@ -64,11 +63,16 @@ func = [
 			svgDocument.getElementById('state' + state).style.stroke = 'green';
 			state = -1;
 		}else{
-			if(currentInstruction > 0){
+			if(currentInstruction == 0){
+				line = document.getElementById(currentInstruction + 1);
+				line.style.backgroundColor = 'lightgrey';
+				var code = document.getElementById('code');
+				code.scroll(0, line.offsetTop - document.getElementById(1).offsetTop);
+			}else{
 				line = document.getElementById(currentInstruction);
-				line.innerHTML = line.innerHTML.replace("⇒ ", "");
+				line.style.backgroundColor = 'white';
 				nextLine = document.getElementById(currentInstruction + 1);
-				nextLine.innerHTML = "⇒ " + nextLine.innerHTML;
+				nextLine.style.backgroundColor = 'lightgrey';
 				var code = document.getElementById('code');
 				code.scroll(0, nextLine.offsetTop - document.getElementById(1).offsetTop);
 			}
@@ -91,7 +95,7 @@ func = [
 		}
 	},
 	function(){
-		if(findLabel(parsedInstruction.label, symbolTable)){
+		if(findLabel(parsedInstruction.label)){
 			svgDocument.getElementById('state' + state).style.stroke = 'green';
 			state = 6;
 		}else{
@@ -109,7 +113,7 @@ func = [
 			name: parsedInstruction.label,
 			type: 'label',
 			size: 0,
-			Location:lc
+			location:lc
 		});
 		buildSymbolTable();
 		state = 8;
@@ -139,7 +143,7 @@ func = [
 	function(){
 		if(parsedInstruction.opcode == 'SEGMENT'){
 			svgDocument.getElementById('state' + state).style.stroke = 'green';
-			update(symbolTable, {
+			updateSymbolTable({
 				name: parsedInstruction.label,
 				type: parsedInstruction.opcode
 			})
@@ -162,7 +166,7 @@ func = [
 	function(){
 		svgDocument.getElementById('state' + state).style.stroke = 'green';
 		size = getSize(directiveTable, parsedInstruction.opcode);
-		update(symbolTable, {
+		updateSymbolTable({
 			name: parsedInstruction.label,
 			type: parsedInstruction.opcode,
 			size: size

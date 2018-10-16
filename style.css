@@ -1,5 +1,17 @@
 *{
 	box-sizing: border-box;
+	font-family: 'Roboto Slab', serif;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+table, th, td {
+    border: 3px solid black;
+}
+th, td {
+    padding: 10px 30px;
+    text-align: center;
 }
 #code{
 	float: left;
@@ -7,17 +19,20 @@
 	margin-left: 5%;
 	height: 500px;
 	overflow: auto;
+	border: thin solid black;
 }
 #lineNumber{
 	float: left;
 	background: mediumblue;
 	color: white;
-	padding: 30px;
+	padding: 0 30px;
 }
 #source{
-	background: lightgrey;
-	padding: 30px;
+	background: rgba(246,246,246,0.2);
 	text-align: center;
+}
+p{
+	padding: 5px 0;
 }
 #assembler{
 	float: left;
@@ -27,20 +42,28 @@
 #svg{
 	height: 300px;
 	overflow: auto;
+	border: thin solid black;
+}
+#symbolTableDiv{
+	padding: 10px 20px;
+	margin-top: 5%;
+	border: thin solid black;
+}
+#text{
+	font-weight: bold;
+	font-size: 24px;
+	margin-bottom: 5px;
 }
 .btn{
 	cursor: pointer;
-	padding: 10px 30px;
+	padding: 10px 27px;
 	border: none;
 	background-color: #33adff;
 	color: white;
-	margin-left: 55px;
+	margin-left: 58px;
 }
 .btn:hover{
 	box-shadow: 5px 10px #888888;
-}
-.active{
-	stroke: red !important;	
 }
 #footer{
 	padding: 20px;
