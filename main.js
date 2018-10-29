@@ -1,4 +1,6 @@
-var svgDocument, source, prevState = -1, state = 0, lc, currentInstruction = 0, parsedInstruction;
+var svgDocument, source, lc, currentInstruction = 0, parsedInstruction;
+
+var state = [], currState = -1, nextState = 0;
 
 function loadCode(){
 	svgDocument = document.getElementById('svg').firstElementChild.getSVGDocument();
@@ -22,7 +24,7 @@ function loadCode(){
 	}
 	source = code;
 }
-
+ 
 function buildSymbolTable(){
 	var table = '';
 	symbolTable.forEach(function(object){
@@ -32,36 +34,24 @@ function buildSymbolTable(){
 		table += '<td>' + object.size + '</td>';
 		table += '<td>' + object.location + '</td>';
 		table += '</tr>'; 
-	})
+	});
 	document.getElementById('symbolTable').innerHTML = table;
-}
-
-function prev(){
-	/*if(lineNum > 1){
-		line = document.getElementById(lineNum);
-		line.innerHTML = line.innerHTML.replace("⇒ ", "");
-		lineNum--;
-		line = document.getElementById(lineNum);
-		line.innerHTML = "⇒ " + line.innerHTML;
-		var code = document.getElementById('code');
-		code.scroll(0, line.offsetTop - document.getElementById(1).offsetTop);
-	}*/
 }
 
 func = [
 	function(){
-		svgDocument.getElementById('state' + state).style.stroke = 'green';
-		state = 1;
+		svgDocument.getElementById('state' + currState).style.stroke = 'green';
+		nextState = 1;
 	},
 	function(){
 		lc = 0;
-		svgDocument.getElementById('state' + state).style.stroke = 'green';
-		state = 2;
+		svgDocument.getElementById('state' + currState).style.stroke = 'green';
+		nextState = 2;
 	},
 	function(){
 		if(currentInstruction == source.length){
-			svgDocument.getElementById('state' + state).style.stroke = 'green';
-			state = -1;
+			svgDocument.getElementById('state' + currState).style.stroke = 'green';
+			nextState = -1;
 		}else{
 			if(currentInstruction == 0){
 				line = document.getElementById(currentInstruction + 1);
@@ -76,39 +66,39 @@ func = [
 				var code = document.getElementById('code');
 				code.scroll(0, nextLine.offsetTop - document.getElementById(1).offsetTop);
 			}
-			svgDocument.getElementById('state' + state).style.stroke = 'red';
-			state = 3;
+			svgDocument.getElementById('state' + currState).style.stroke = 'red';
+			nextState = 3;
 		}
 	},
 	function(){
 		parsedInstruction = parseInstruction(source[currentInstruction++]);
-		svgDocument.getElementById('state' + state).style.stroke = 'green';
-		state = 4;
+		svgDocument.getElementById('state' + currState).style.stroke = 'green';
+		nextState = 4;
 	},
 	function(){
 		if(parsedInstruction.label != ''){
-			svgDocument.getElementById('state' + state).style.stroke = 'green';
-			state = 5;
+			svgDocument.getElementById('state' + currState).style.stroke = 'green';
+			nextState = 5;
 		}else{
-			svgDocument.getElementById('state' + state).style.stroke = 'red';
-			state = 8;
+			svgDocument.getElementById('state' + currState).style.stroke = 'red';
+			nextState = 8;
 		}
 	},
 	function(){
 		if(findLabel(parsedInstruction.label)){
-			svgDocument.getElementById('state' + state).style.stroke = 'green';
-			state = 6;
+			svgDocument.getElementById('state' + currState).style.stroke = 'green';
+			nextState = 6;
 		}else{
-			svgDocument.getElementById('state' + state).style.stroke = 'red';
-			state = 7;
+			svgDocument.getElementById('state' + currState).style.stroke = 'red';
+			nextState = 7;
 		}
 	},
 	function(){
-		svgDocument.getElementById('state' + state).style.stroke = 'green';
-		state = -1;
+		svgDocument.getElementById('state' + currState).style.stroke = 'green';
+		nextState = -1;
 	},
 	function(){
-		svgDocument.getElementById('state' + state).style.stroke = 'green';
+		svgDocument.getElementById('state' + currState).style.stroke = 'green';
 		symbolTable.push({
 			name: parsedInstruction.label,
 			type: 'label',
@@ -116,55 +106,55 @@ func = [
 			location:lc
 		});
 		buildSymbolTable();
-		state = 8;
+		nextState = 8;
 	},
 	function(){
 		if(check(directiveTable, parsedInstruction.opcode)){
-			svgDocument.getElementById('state' + state).style.stroke = 'green';
-			state = 9;
+			svgDocument.getElementById('state' + currState).style.stroke = 'green';
+			nextState = 9;
 		}else{
-			svgDocument.getElementById('state' + state).style.stroke = 'red';
-			state = 16;
+			svgDocument.getElementById('state' + currState).style.stroke = 'red';
+			nextState = 16;
 		}
 	},
 	function(){
 		if(parsedInstruction.opcode == 'END'){
-			svgDocument.getElementById('state' + state).style.stroke = 'green';
-			state = 10;
+			svgDocument.getElementById('state' + currState).style.stroke = 'green';
+			nextState = 10;
 		}else{
-			svgDocument.getElementById('state' + state).style.stroke = 'red';
-			state = 11; 
+			svgDocument.getElementById('state' + currState).style.stroke = 'red';
+			nextState = 11; 
 		}
 	},
 	function(){
-		svgDocument.getElementById('state' + state).style.stroke = 'green';
-		state = -1;
+		svgDocument.getElementById('state' + currState).style.stroke = 'green';
+		nextState = -1;
 	},
 	function(){
 		if(parsedInstruction.opcode == 'SEGMENT'){
-			svgDocument.getElementById('state' + state).style.stroke = 'green';
+			svgDocument.getElementById('state' + currState).style.stroke = 'green';
 			updateSymbolTable({
 				name: parsedInstruction.label,
 				type: parsedInstruction.opcode
 			})
-			state = 12;
+			nextState = 12;
 		}else{
-			svgDocument.getElementById('state' + state).style.stroke = 'red';
-			state = 14;
+			svgDocument.getElementById('state' + currState).style.stroke = 'red';
+			nextState = 14;
 		}
 	},
 	function(){
-		svgDocument.getElementById('state' + state).style.stroke = 'green';
+		svgDocument.getElementById('state' + currState).style.stroke = 'green';
 		buildSymbolTable();
-		state = 13;
+		nextState = 13;
 	},
 	function(){
-		svgDocument.getElementById('state' + state).style.stroke = 'green';
+		svgDocument.getElementById('state' + currState).style.stroke = 'green';
 		lc = 0;
-		state = 2;
+		nextState = 2;
 	},
 	function(){
-		svgDocument.getElementById('state' + state).style.stroke = 'green';
+		svgDocument.getElementById('state' + currState).style.stroke = 'green';
 		size = getSize(directiveTable, parsedInstruction.opcode);
 		updateSymbolTable({
 			name: parsedInstruction.label,
@@ -173,41 +163,65 @@ func = [
 		})
 		buildSymbolTable();
 		lc += size;
-		state = 15;
+		nextState = 15;
 	},
 	function(){
-		svgDocument.getElementById('state' + state).style.stroke = 'green';
-		state = 2;
+		svgDocument.getElementById('state' + currState).style.stroke = 'green';
+		nextState = 2;
 	},
 	function(){
 		if(check(machineInstructionTable, parsedInstruction.opcode)){
-			svgDocument.getElementById('state' + state).style.stroke = 'green';
-			state = 17;
+			svgDocument.getElementById('state' + currState).style.stroke = 'green';
+			nextState = 17;
 		}else{
-			svgDocument.getElementById('state' + state).style.stroke = 'red';
-			state = 18;
+			svgDocument.getElementById('state' + currState).style.stroke = 'red';
+			nextState = 18;
 		}	
 	},
 	function(){
-		svgDocument.getElementById('state' + state).style.stroke = 'green';
+		svgDocument.getElementById('state' + currState).style.stroke = 'green';
 		lc += getSize(machineInstructionTable, parsedInstruction.opcode);
-		state = 2;
+		if(parsedInstruction.indirect)lc += 2;
+		nextState = 2;
 	},
 	function(){
-		svgDocument.getElementById('state' + state).style.stroke = 'green';
-		state = -1;
+		svgDocument.getElementById('state' + currState).style.stroke = 'green';
+		nextState = -1;
 	}
 ];
 
-function next(){
-	if(state != -1){
-		if(prevState != -1){
-			svgDocument.getElementById('state' + prevState).style.stroke = '';
+function prev(){
+
+	var temp = state.pop();
+	if(temp){
+		svgDocument.getElementById('state' + currState).style.stroke = '';
+		currState = temp.state;
+		if(currState == 3){
+			currentInstruction--;	
 		}
-		prevState = state;
-		var t = svgDocument.getElementById('state' + state).getBoundingClientRect();
+		var t = svgDocument.getElementById('state' + currState).getBoundingClientRect();
 		svgDiv = document.getElementById('svg');
 		svgDiv.scroll(t.left - 20, t.top -20);
-		func[state]();
+		symbolTable = temp.table;
+		buildSymbolTable();
+		func[currState]();
+	}
+
+}
+
+function next(){
+	if(nextState != -1){
+		if(currState != -1){
+			svgDocument.getElementById('state' + currState).style.stroke = '';
+			state.push({
+				state : currState,
+				table : Array.from(symbolTable)
+			});
+		}
+		var t = svgDocument.getElementById('state' + nextState).getBoundingClientRect();
+		svgDiv = document.getElementById('svg');
+		svgDiv.scroll(t.left - 20, t.top -20);
+		currState = nextState;
+		func[currState]();
 	}
 }

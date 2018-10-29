@@ -1,33 +1,5 @@
 DATA: Segment
-MOV AX, 0
+MOV [AX], 0
 label: MOV AX, var
 label1: ADD AX, BX
-var: MOV DX, AX
-
-
-MOV AX, 0
-MOV AX, var
-ADD AX, BX
-MOV DX, AX
-
-MOV AX, 0
-MOV AX, var
-ADD AX, BX
-MOV DX, AX
-
-MOV AX, 0
-MOV AX, var
-ADD AX, BX
-MOV DX, AX
-
-
-MOV AX, 0
-MOV AX, var
-ADD AX, BX
-MOV DX, AX
-
-
-MOV AX, 0
-MOV AX, var
-ADD AX, BX
-MOV DX, AX
+var: BYTE val

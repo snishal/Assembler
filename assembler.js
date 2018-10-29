@@ -41,19 +41,48 @@ machineInstructionTable = [{
 var symbolTable = [];
 
 function parseInstruction(instruction){
+	
 	var arr = instruction.split(" ");
 	var parsedInstruction = {
 		label: '',
-		opcode: ''
+		opcode: '',
+		indirect: false
 	};
-	if(arr[0].includes(':')){
-		parsedInstruction.label = arr[0].replace(':', '');
-		parsedInstruction.opcode = arr[1].toUpperCase();
-	}else{
-		parsedInstruction.opcode = arr[0].toUpperCase();
+
+	instruction.trim();
+	for(var i = 0; i < instruction.length; i++){
+		if(instruction[i] == ':'){
+			parsedInstruction.label = instruction.substr(0, i);
+			instruction = instruction.substr(i+1);
+			break;
+		}else if(instruction[i] == ' '){
+			parsedInstruction.opcode = instruction.substr(0, i).toUpperCase();
+			instruction = instruction.substr(i+1);
+			break;
+		}
+	}
+
+	instruction.trim();
+	if(parsedInstruction.label != ''){
+		for(var i = 0; i < instruction.length; i++){
+			if(instruction[i] == ' '){
+				parsedInstruction.opcode = instruction.substr(0, i).toUpperCase();
+				instruction = instruction.substr(i+1);
+				break;
+			}
+		}
+	}
+
+	if(parsedInstruction.opcode == '')parsedInstruction.opcode = instruction.toUpperCase();
+	else{
+		var patt = /\[[^\]]*\]/;
+		if(patt.test(instruction)){
+			parsedInstruction.indirect = true;
+		}
 	}
 
 	return parsedInstruction;
+	
 }
 
 function findLabel(label){
